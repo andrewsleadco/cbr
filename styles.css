@@ -1,0 +1,296 @@
+/* === Reset & Base === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    /* NO padding-top here: spacer handles it */
+  }
+  
+  /* spacer inserted by JS */
+  .header-spacer {
+    width: 100%;
+    display: block;
+    /* height is set inline by JS */
+  }
+  
+  /* === SITE HEADER === */
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+  }
+  .logo img {
+    max-height: 50px;
+  }
+  .site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    align-items: center;
+  }
+  .site-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+  .btn-nav {
+    background: #2980b9;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  .btn-nav:hover {
+    background: #1c5980;
+  }
+  
+  /* === HERO === */
+  .hero {
+    position: relative;
+    text-align: center;
+    overflow: visible; /* allow image bleed */
+  }
+  .hero-image {
+    width: 100%;
+    display: block;
+  }
+  .hero-content {
+    position: relative;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    padding: 2rem;
+    background: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    z-index: 100;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #2980b9;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  .btn-primary:hover {
+    background: #1c5980;
+  }
+  
+  /* === GALLERY CAROUSEL === */
+  .gallery {
+    background: #fafafa;
+    padding: 2rem 0;
+  }
+  .carousel {
+    position: relative;
+    overflow: hidden;
+  }
+  .carousel-track-container {
+    overflow: hidden;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .carousel-slide {
+    min-width: 100%;
+  }
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0 auto;
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 150;
+    transition: background 0.3s;
+  }
+  .carousel-btn.prev { left: 1rem; }
+  .carousel-btn.next { right: 1rem; }
+  .carousel-btn:hover {
+    background: rgba(0,0,0,0.8);
+  }
+  
+  /* === CALCULATOR === */
+  .calculator {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  .calculator h2 {
+    margin-bottom: 1rem;
+  }
+  .calculator .btn-primary {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* === TRUST SECTION === */
+  .trust {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .trust h2 {
+    margin-bottom: 1rem;
+  }
+  .logos {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .logos img {
+    max-height: 40px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+  .logos img:hover {
+    opacity: 1;
+  }
+  
+  /* === SERVICES === */
+  .services {
+    padding: 3rem 0;
+  }
+  .services h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .grid {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .card {
+    flex: 1;
+    min-width: 250px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .card h3 {
+    margin-bottom: 0.5rem;
+    color: #2980b9;
+  }
+  
+  /* === TESTIMONIALS === */
+  .testimonials {
+    background: #fafafa;
+    padding: 3rem 0;
+  }
+  .testimonials h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  blockquote {
+    max-width: 700px;
+    margin: 1rem auto;
+    font-style: italic;
+    color: #555;
+  }
+  blockquote p {
+    margin-bottom: 0.5rem;
+  }
+  blockquote cite {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* === BOOKING WIDGET === */
+  .booking {
+    padding: 3rem 0;
+  }
+  .booking h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .booking p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .widget {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .placeholder {
+    text-align: center;
+    padding: 2rem;
+    border: 2px dashed #ccc;
+    color: #777;
+  }
+  
+  /* === FOOTER === */
+  .site-footer {
+    background: #222;
+    color: #ccc;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  .site-footer a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .header-inner {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .site-nav ul {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .hero-title {
+      font-size: 2rem;
+    }
+    .grid {
+      flex-direction: column;
+    }
+  }
+  

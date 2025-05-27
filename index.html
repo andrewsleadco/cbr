@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carlos Bathroom Renovations</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+ <!-- Header / Logo + Nav -->
+ <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo" style="display: flex; align-items: center;">
+        <a href="index.html" style="margin-right: 10px;">
+          <img src="imgs/logo.png" alt="Carlos Bathroom Renovations" />
+        </a>
+        <h2 style="margin: 0;">Carlos Bathroom Renovations</h2>
+      </div>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#booking" class="btn-nav">Book Estimate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ <!-- Hero -->
+ <section class="hero">
+    <img src="imgs/bathroom_hero.png"
+         alt="Luxury Bathroom Renovation"
+         class="hero-image" />
+    <div class="hero-content">
+      <h1 class="hero-title">One-Click to Your New Bathroom</h1>
+      <p class="subtitle">
+        Book your free in-home design consultation in under 60 seconds.
+      </p>
+      <a href="#booking" class="btn-primary">Book Your Appointment</a>
+    </div>
+  </section>
+
+  <!-- Gallery Carousel -->
+  <section class="gallery">
+    <div class="carousel">
+      <button class="carousel-btn prev">‹</button>
+      <div class="carousel-track-container">
+        <ul class="carousel-track">
+          <li class="carousel-slide current-slide">
+            <img src="imgs/bathroom_1.png" alt="Bathroom View 1">
+          </li>
+          <li class="carousel-slide">
+            <img src="imgs/bathroom.png" alt="Bathroom View 2">
+          </li>
+          <li class="carousel-slide">
+            <img src="imgs/bathroom_3.png" alt="Bathroom View 3">
+          </li>
+        </ul>
+      </div>
+      <button class="carousel-btn next">›</button>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section id="calculator" class="calculator">
+    <div class="container">
+      <h2>Need a quick estimate?</h2>
+      <button class="btn-primary">Bathroom Budget Calculator</button>
+      <p>Easily find a reasonable budget for your bathroom.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>3D Design Consultation</h3>
+          <p>Preview your new bathroom in-home with our custom 3D mockups.</p>
+        </div>
+        <div class="card">
+          <h3>Complete Remodels</h3>
+          <p>From demolition to finishing touches—turnkey service.</p>
+        </div>
+        <div class="card">
+          <h3>Shower & Tub Conversions</h3>
+          <p>Modern, spa-style upgrades tailored to your space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2>What Homeowners Say</h2>
+      <blockquote>
+        <p>“Absolutely seamless experience—and our new spa shower is breathtaking.”</p>
+        <cite>— Jane D., Charlotte, NC</cite>
+      </blockquote>
+      <blockquote>
+        <p>“Professional team, on-time start, and exquisite craftsmanship.”</p>
+        <cite>— Mark R., Matthews, NC</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" class="booking">
+    <div class="container">
+      <h2>Schedule Your Free Estimate</h2>
+      <p>Pick the date & time that works for you—our designer comes to your home.</p>
+      <div class="widget">
+        <p class="placeholder">[Booking widget embed goes here]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Carlos Bathroom Renovations &nbsp;|&nbsp;
+        <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+        <a href="#">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Carousel JS -->
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const slideWidth = slides[0].getBoundingClientRect().width;
+
+    slides.forEach((slide, i) => slide.style.left = slideWidth * i + 'px');
+
+    function moveToSlide(current, target) {
+      track.style.transform = 'translateX(-' + target.style.left + ')';
+      current.classList.remove('current-slide');
+      target.classList.add('current-slide');
+    }
+
+    prevBtn.addEventListener('click', () => {
+      const current = track.querySelector('.current-slide');
+      const prev = current.previousElementSibling || slides[slides.length - 1];
+      moveToSlide(current, prev);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const current = track.querySelector('.current-slide');
+      const next = current.nextElementSibling || slides[0];
+      moveToSlide(current, next);
+    });
+  </script>
+  
+<!-- THIS snippet automatically measures your header and pushes content down -->
+<script>
+    function adjustPageOffset() {
+      const hdr = document.querySelector('.site-header');
+      if (!hdr) return;
+      document.body.style.paddingTop = hdr.offsetHeight + 'px';
+    }
+    // Run on initial load
+    if (document.readyState !== 'loading') {
+      adjustPageOffset();
+    } else {
+      window.addEventListener('DOMContentLoaded', adjustPageOffset);
+    }
+    // Re-run on resize (nav wrapping changes height)
+    window.addEventListener('resize', adjustPageOffset);
+  </script>
+  
+</body>
+</html>
