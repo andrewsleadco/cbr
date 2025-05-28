@@ -71,12 +71,11 @@
   .hero-content {
     position: relative;
     top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -250%);
     max-width: 90%;
     padding: 2rem;
     background: rgba(0,0,0,0.4);
     border-radius: 8px;
-    z-index: 100;
   }
   .hero-title {
     font-size: 2.5rem;
